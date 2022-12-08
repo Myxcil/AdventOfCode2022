@@ -25,12 +25,12 @@ class Directory:
         return str(self)
 
     def calc_size(self):
-        total_size = 0
+        size = 0
         for sub_dir in self.subdirectories:
-            total_size += sub_dir.calc_size()
+            size += sub_dir.calc_size()
         for file in self.files:
-            total_size += file.size
-        return total_size
+            size += file.size
+        return size
 
     def find_subdirectory(self, subdir_name):
         for sub_dir in self.subdirectories:
